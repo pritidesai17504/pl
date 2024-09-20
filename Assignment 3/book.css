@@ -1,0 +1,321 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+#cart-icon {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff6347;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 50%;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+#Home {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+#Home h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+#Home p {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #e5533d;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.Books, .all-books {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.Books h2, .all-books h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #444;
+}
+
+.Books h2::after, .all-books h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #ff6347;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.book-list, .book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.book {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1 1 30%;
+    max-width: 30%;
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.book:hover img {
+    transform: scale(1.05);
+}
+
+.book h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.book p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #777;
+}
+
+.book button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.book button:hover {
+    background-color: #45a049;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    font-size: 1em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.modal-content ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-content ul li:last-child {
+    border-bottom: none;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#Contact{
+    padding: 50px;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        flex: 1 1 100%;
+    }
+
+    .book-grid {
+        flex-direction: column;
+    }
+
+    .Home {
+        height: 400px;
+    }
+
+    #Home h2 {
+        font-size: 2.5em;
+    }
+
+    #Home p {
+        font-size: 1.3em;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector Methods</title>
+    <style>
+       
+        ul {
+            list-style-type: none;
+            padding: 200px 500px 0px 500px;
+        }
+        li {
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin: 5px 0;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+
+<ul id="list">
+    <li>OFF</li>
+    <li>OFF</li>
+    <li>OFF</li>
+    <li>OFF</li>
+    <li>OFF</li>
+    <li>OFF</li>
+</ul>
+
+<script>
+
+
+    const listItems = document.querySelectorAll('#list li');
+
+    const handleHover = (event) => {
+        event.target.innerText = 'ON';
+    };
+
+    if (listItems.length > 1) {
+        listItems.forEach((item) => item.addEventListener('mouseover', handleHover));
+    }
+</script>
+
+</body>
+</html>

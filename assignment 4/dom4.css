@@ -1,0 +1,68 @@
+// Checkbox and button
+const checkbox = document.getElementById("myCheckbox");
+const button1 = document.getElementById("button1");
+
+button1.addEventListener("click", () => {
+  checkbox.checked = true;
+});
+
+// Textboxes and button
+const firstNameInput = document.getElementById("firstName");
+const lastNameInput = document.getElementById("lastName");
+const fullNameInput = document.getElementById("fullName");
+const button2 = document.getElementById("button2");
+
+button2.addEventListener("click", () => {
+  const fullName = firstNameInput.value + " " + lastNameInput.value;
+  fullNameInput.value = fullName;
+});
+
+// Buttons for increment and reset
+const valueButton = document.getElementById("valueButton");
+const incrementButton = document.getElementById("incrementButton");
+const resetButton = document.getElementById("resetButton");
+
+let currentValue = 0;
+valueButton.textContent = currentValue;
+
+incrementButton.addEventListener("click", () => {
+  currentValue++;
+  valueButton.textContent = currentValue;
+});
+
+resetButton.addEventListener("click", () => {
+  currentValue = 0;
+  valueButton.textContent = currentValue;
+});
+
+// Dynamic input filter
+const searchInput = document.getElementById("searchInput");
+const listItems = document.querySelectorAll(".listItem");
+
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  listItems.forEach(item => {
+    const itemText = item.textContent.toLowerCase();
+    if (itemText.includes(searchTerm)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
+
+// Balloons
+const balloons = document.querySelectorAll(".balloon");
+const refreshButton = document.getElementById("refreshButton");
+
+balloons.forEach(balloon => {
+  balloon.addEventListener("mouseover", () => {
+    balloon.style.display = "none";
+  });
+});
+
+refreshButton.addEventListener("click", () => {
+  balloons.forEach(balloon => {
+    balloon.style.display = "block";
+  });
+});

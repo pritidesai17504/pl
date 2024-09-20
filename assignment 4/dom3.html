@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Remove Circle</title>
+  <style>
+    .body{
+        margin: 20px;
+        padding: 20px;
+    }
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+    }
+   
+    #redCircle {
+        margin: 20px;
+        padding: 20px;
+      background-color: red;
+    }
+
+    #greenCircle {
+      background-color: green;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="redCircle" class="circle"></div>
+  <div id="greenCircle" class="circle"></div>
+  <button id="clickme">Click Me</button>
+
+  <script>
+    const clickmeButton = document.getElementById("clickme");
+    clickmeButton.addEventListener("click", removeRedCircle);
+
+    function removeRedCircle() {
+      const redCircle = document.getElementById("redCircle");
+      redCircle.remove();
+    }
+  </script>
+</body>
+</html>

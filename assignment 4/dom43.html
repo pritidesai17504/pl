@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment and Reset Buttons</title>
+</head>
+<body>
+   
+    <button id="valueButton">0</button>
+    <button id="incrementButton">Increment</button>
+    <button id="resetButton">Reset</button>
+
+    <script>
+        const valueButton = document.getElementById('valueButton');
+        const incrementButton = document.getElementById('incrementButton');
+        const resetButton = document.getElementById('resetButton');
+
+        let value = 0;
+        function incrementValue() {
+            value++;
+            valueButton.textContent = value; 
+        }
+
+        function resetValue() {
+            value = 0;
+            valueButton.textContent = value; 
+        }
+        incrementButton.addEventListener('click', incrementValue);
+        resetButton.addEventListener('click', resetValue);
+    </script>
+</body>
+</html>

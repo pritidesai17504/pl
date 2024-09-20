@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Items</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Search items...">
+
+    <ul id="itemList">
+        <li class="listItem">Apple</li>
+        <li class="listItem">Banana</li>
+        <li class="listItem">Orange</li>
+        <li class="listItem">Grapes</li>
+        <li class="listItem">Mango</li>
+        <li class="listItem">Pineapple</li>
+    </ul>
+
+    <script>
+        
+        const searchInput = document.getElementById('searchInput');
+        const items = document.querySelectorAll('.listItem');
+
+        function filterItems() {
+            const searchTerm = searchInput.value.toLowerCase(); 
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.classList.remove('hidden'); 
+                } else {
+                    item.classList.add('hidden'); 
+                }
+            });
+        }
+        searchInput.addEventListener('input', filterItems);
+    </script>
+</body>
+</html>

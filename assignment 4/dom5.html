@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moving Button</title>
+  <style>
+    .moving-button
+    {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      padding: 10px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.05s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <button class="moving-button"onclick="toggleMovement();"style="left: 90px;">Click Me</button>
+
+  <script >
+    
+    const button = document.querySelector('.moving-button');
+        let isMoving = false;
+        let direction = 1; // 1 for right, -1 for left
+
+        function move() {
+            if (isMoving) {
+                const currentLeft = parseInt(window.getComputedStyle(button).left, 10) || 0;
+
+                button.style.left = `${currentLeft + direction}px`;
+
+                requestAnimationFrame(move);
+            }
+        }
+
+        function toggleMovement() {
+            isMoving = !isMoving;
+            button.textContent = isMoving ? 'Stop Me' : 'Click Me';
+            if (isMoving) {
+                move();
+            }
+        }
+    
+  </script>
+</body>
+</html>

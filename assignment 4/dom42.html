@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combine Names</title>
+</head>
+<body>
+    
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="text" id="fullName" placeholder="Full Name" readonly>
+
+    <button id="combineButton">Combine Names</button>
+
+    <script>
+       
+        const firstNameInput = document.getElementById('firstName');
+        const lastNameInput = document.getElementById('lastName');
+        const fullNameInput = document.getElementById('fullName');
+        const combineButton = document.getElementById('combineButton');
+
+        function combineNames() {
+            const firstName = firstNameInput.value.trim();
+            const lastName = lastNameInput.value.trim();
+            fullNameInput.value = `${firstName} ${lastName}`; 
+        }
+
+        combineButton.addEventListener('click', combineNames);
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Balloon</title>
+  <style>
+    .balloon {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 10px;
+    }
+    .ball{
+      background-color: rgb(44, 44, 85);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="ball">
+    <ul>
+
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+    </ul>
+    <ul>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+    </ul>
+  </div>
+  <button id="refreshButton">Refresh Balloons</button>
+
+  <script>
+    
+const balloons = document.querySelectorAll('.balloon');
+
+balloons.forEach(balloon => {
+    balloon.addEventListener('mouseover', function() {
+        this.style.transition = 'opacity 0.5s ease';
+        this.style.opacity = '0';
+    });
+});
+balloons.forEach(balloon=>
+{
+    balloon.addEventListener('mouseover',function(){
+     
+    });
+});
+document.getElementById('refreshButton').addEventListener('click', function() {
+    balloons.forEach(balloon => {
+        balloon.style.visibility = 'visible';
+        balloon.style.opacity = '1';
+    });
+});
+
+  </script>
+</body>
+</html>
