@@ -1,0 +1,51 @@
+/* src/components/CharacterList.css */
+.character-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+  animation: listFadeIn 1s ease-in;
+}
+
+@keyframes listFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .character-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    animation: listMobileFadeIn 1s ease-in;
+  }
+}
+
+@keyframes listMobileFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .character-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    animation: listPhoneFadeIn 1s ease-in;
+  }
+}
+
+@keyframes listPhoneFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

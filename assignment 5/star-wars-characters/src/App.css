@@ -1,0 +1,129 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  background-color: gray;
+  font-family: 'Outfit', sans-serif;
+  color: rgb(94, 9, 242);
+  margin: 20 px;
+  padding: 20px;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px; /* Adjust as needed */
+}
+
+.character-card {
+  background-color: #187de2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(222, 26, 26, 0.2);
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: cardAppearAnimation 0.5s ease-out;
+}
+
+@keyframes cardAppearAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.character-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #a92c2c;
+  animation: imageSlideAnimation 0.5s ease-in-out;
+}
+
+@keyframes imageSlideAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #af6969;
+}
+
+p {
+  font-size: 1.5em;
+  color: #1083d0;
+}
+
+pre {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(56, 4, 98);
+  animation: textFadeAnimation 2s ease-in-out;
+}
+
+@keyframes textFadeAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: rgb(242, 59, 9);
+  animation: textSlideAnimation 1s ease-out;
+}
+
+@keyframes textSlideAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(249, 249, 12);
+  font-size: 2.5em;
+  animation: headingBounceAnimation 1s ease-in-out;
+}
+
+@keyframes headingBounceAnimation {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
